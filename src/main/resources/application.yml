@@ -1,0 +1,17 @@
+server:
+  port: 3303
+  ssl:
+    key-store: classpath:localhost.p12
+    key-store-password: password
+    key-alias: localhost
+    keyStoreType: PKCS12
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/bharathkarnam/configservice
+          search-paths:
+           - 'app-*'
+          #username: root
+          #passphrase: 12345
